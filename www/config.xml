@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns   = "http://www.w3.org/ns/widgets"
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+        id          = "com.gaming_platform.tictactoe"
+        versionCode = "10"
+        version     = "1.0.0" >
+
+    <name>TicTacToe</name>
+
+    <description>
+        A multiplayer TicTacToe game.
+    </description>
+
+    <author href="http://flash-together.appspot.com/yoavzibin/index.html" email="yoav.zibin@gmail.com">
+        Yoav Zibin
+    </author>
+
+</widget>
