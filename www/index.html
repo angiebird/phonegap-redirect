@@ -6,7 +6,7 @@
         <script>
         function redirect(token, error) {
           window.location.assign(
-            "http://yoav-zibin.github.io/TicTacToe/game.html?token=" + token + "&error=" + error);
+            "http://yoav-zibin.github.io/TicTacToe/game.html?access_token=" + token + "&error=" + error);
         }
         function fbLoginSuccess(userData) {
             facebookConnectPlugin.getAccessToken(function(token) {
