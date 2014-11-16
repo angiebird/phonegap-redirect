@@ -4,23 +4,26 @@
     <body>
         <script type="text/javascript" src="cordova.js"></script>
         <script>
-        function redirect(token, userID) {
+        function redirect(token, userID, error) {
+          if (error !== null) {
+            window.alert(error);
+          }
           window.location.assign(
             "http://yoav-zibin.github.io/TicTacToe/game.html?token="
             + token + "&userID=" + userID);
         }
         function fbLoginSuccess(userData) {
             facebookConnectPlugin.getAccessToken(function(token) {
-                redirect(token, userData.userID);
-            }, function(err) {
-                redirect("", "");
+                redirect(token, userData.userID, null);
+            }, function(error) {
+                redirect("", "", error);
             });
         }
 
         function onDeviceReady() {
             facebookConnectPlugin.login(["public_profile"],
                 fbLoginSuccess,
-                function (error) { redirect("", ""); }
+                function (error) { redirect("", "", error); }
             );
         }
         document.addEventListener("deviceready", onDeviceReady, false);
