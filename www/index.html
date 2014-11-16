@@ -18,7 +18,6 @@
         }
 
         function onDeviceReady() {
-            alert('onDeviceReady');
             facebookConnectPlugin.login(["public_profile"],
                 fbLoginSuccess,
                 function (error) { redirect("", ""); }
