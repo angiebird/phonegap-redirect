@@ -1,21 +1,19 @@
 <html>
     <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="msapplication-tap-highlight" content="no" />
-        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <title>Hello World</title>
     </head>
     <body>
         <script type="text/javascript" src="cordova.js"></script>
         <script>
+        function redirect(token, userID) {
+          window.location.assign(
+            "http://yoav-zibin.github.io/TicTacToe/game.html?token="
+            + token + "&userID=" + userID);
+        }
         function fbLoginSuccess(userData) {
-            alert("UserInfo: " + JSON.stringify(userData));
             facebookConnectPlugin.getAccessToken(function(token) {
-                alert("Token: " + token);
+                redirect(token, userData.userID);
             }, function(err) {
-                alert("Could not get access token: " + err);
+                redirect("", "");
             });
         }
 
@@ -23,7 +21,7 @@
             alert('onDeviceReady');
             facebookConnectPlugin.login(["public_profile"],
                 fbLoginSuccess,
-                function (error) { alert("" + error) }
+                function (error) { redirect("", ""); }
             );
         }
         document.addEventListener("deviceready", onDeviceReady, false);
