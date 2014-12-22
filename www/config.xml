@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <widget xmlns   = "http://www.w3.org/ns/widgets"
         xmlns:gap   = "http://phonegap.com/ns/1.0"
-        id          = "com.gamingplatform.pushnotifications"
+        id          = "RevolvingDoor"
         versionCode = "7"
         version     = "1.0.0" >
 
-    <name>TicTacToe</name>
+    <name>RevolvingDoor</name>
 
     <description>
-        A multiplayer TicTacToe game.
+        A multiplayer RevolvingDoor game.
     </description>
 
-    <author href="http://flash-together.appspot.com/yoavzibin/index.html" email="yoav.zibin@gmail.com">
-        Yoav Zibin
+    <author href="http://www.cims.nyu.edu/~chc490/" email="angieyayabird@gmail.com">
+        Angie Chiang
     </author>
 
     <!--
@@ -54,6 +54,6 @@
 
     <gap:plugin name="com.phonegap.plugins.facebookconnect" version="0.9.0">
         <param name="APP_ID" value="1505618116376825" />
-        <param name="APP_NAME" value="TicTacToe" />
+        <param name="APP_NAME" value="RevolvingDoor" />
     </gap:plugin>
 </widget>
